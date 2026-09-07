@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Илья Годовник | Психоаналитическая диагностика и терапия</title>
+    <meta name="description" content="Психоаналитическая диагностика и сканирование личности. Определите свой психотип, уровень организации и получите Карту личности. Запишитесь на консультацию к психоаналитику Илье Григорьевичу Годовнику.">
+    <link rel="canonical" href="https://godovnik-psy.ru/">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Илья Годовник | Психоаналитическая диагностика">
+    <meta property="og:description" content="Узнайте карту своей личности. Психоаналитическое сканирование покажет ваш психотип и зоны роста.">
+    <meta property="og:image" content="https://godovnik-psy.ru/img/og-image.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://godovnik-psy.ru/">
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MedicalBusiness",
+        "name": "Илья Григорьевич Годовник",
+        "description": "Психоаналитическая диагностика и терапия. Сканирование личности, определение психотипа и уровня организации.",
+        "url": "https://godovnik-psy.ru/",
+        "telephone": "+7-XXX-XXX-XX-XX",
+        "priceRange": "₽7,000 - ₽35,000",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Москва",
+            "addressCountry": "RU"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "47"
+        },
+        "makesOffer": [
+            {"@type":"Offer","name":"Экспресс-скан","price":"7000","priceCurrency":"RUB"},
+            {"@type":"Offer","name":"Карта личности","price":"20000","priceCurrency":"RUB"},
+            {"@type":"Offer","name":"Карта + Трек","price":"35000","priceCurrency":"RUB"}
+        ]
+    }
+    </script>
+    
+    <style>
+        /* ===== RESET ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: #f9f7f4;
+            color: #2c2c2c;
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3 { font-weight: 700; line-height: 1.2; }
+        h1 { font-size: 3rem; margin-bottom: 20px; color: #fff; }
+        h2 { font-size: 2.4rem; margin-bottom: 30px; text-align: center; color: #1a1a2e; }
+        h2 span { color: #b08d6b; }
+        h3 { font-size: 1.4rem; margin-bottom: 10px; }
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #5a5a5a;
+            max-width: 700px;
+            margin: -20px auto 40px;
+        }
+        
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-block;
+            background: #b08d6b;
+            color: #fff !important;
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(176, 141, 107, 0.3);
+        }
+        .btn:hover {
+            background: #9a7a5a;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(176, 141, 107, 0.4);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #b08d6b;
+            color: #b08d6b !important;
+            box-shadow: none;
+        }
+        .btn-outline:hover { background: #b08d6b; color: #fff !important; }
+        .btn-center { text-align: center; margin-top: 30px; }
+        
+        /* ===== HEADER ===== */
+        header {
+            background: #1a1a2e;
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo { color: #fff; font-size: 1.5rem; font-weight: 700; text-decoration: none; }
+        .logo span { color: #b08d6b; }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .nav-links a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: #b08d6b; }
+        .nav-cta {
+            background: #b08d6b;
+            color: #fff !important;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+        .nav-cta:hover { background: #9a7a5a !important; }
+        .header-contact {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-left: 15px;
+        }
+        .header-contact a { color: #b08d6b; text-decoration: none; }
+        
+        /* ===== HERO ===== */
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+            color: #fff;
+            padding: 90px 0 80px;
+            text-align: center;
+            position: relative;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: linear-gradient(to top, #f9f7f4, transparent);
+        }
+        .hero h1 { font-size: 3.2rem; color: #fff; }
+        .hero .highlight { color: #b08d6b; }
+        .hero p { font-size: 1.3rem; color: #ccc; max-width: 700px; margin: 0 auto 30px; }
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        .hero-badges span {
+            background: rgba(255,255,255,0.08);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: #ddd;
+            backdrop-filter: blur(4px);
+        }
+        
+        /* ===== SECTIONS ===== */
+        section { padding: 70px 0; }
+        .section-light { background: #fff; }
+        .section-dark { background: #f0eeea; }
+        .section-warm { background: #fcf9f5; }
+        
+        /* ===== PHILOSOPHY ===== */
+        .philosophy-block {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.2rem;
+            color: #444;
+            font-style: italic;
+            border-left: 4px solid #b08d6b;
+            padding: 30px 40px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.04);
+        }
+        .philosophy-block .author { margin-top: 20px; font-style: normal; font-weight: 600; color: #1a1a2e; }
+        
+        /* ===== SEGMENTS ===== */
+        .segments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .segment-card {
+            background: #fff;
+            padding: 30px 25px;
+            border-radius: 16px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+            border-left: 5px solid #b08d6b;
+            transition: transform 0.3s;
+        }
+        .segment-card:hover { transform: translateY(-5px); }
+        .segment-card h4 { font-size: 1.2rem; }
+        .segment-card .problem { color: #a0524a; font-weight: 500; margin: 8px 0; }
+        .segment-card .solution { color: #3a7a5a; }
+        
+        /* ===== METHOD ===== */
+        .method-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+        .method-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .method-card:hover { transform: translateY(-5px); }
+        .method-card .step {
+            display: inline-block;
+            background: #b08d6b;
+            color: #fff;
+            width: 54px;
+            height: 54px;
+            line-height: 54px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        .method-card .result { font-weight: 600; color: #b08d6b; margin-top: 10px; }
+        
+        /* ===== WHY ME ===== */
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .why-grid img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+        }
+        .why-grid .stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .why-grid .stats .stat { text-align: center; }
+        .why-grid .stats .stat .number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #b08d6b;
+            display: block;
+        }
+        
+        /* ===== BLOG PREVIEW ===== */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .blog-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+            transition: 0.3s;
+        }
+        .blog-card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
+        .blog-card .tag {
+            display: inline-block;
+            background: #b08d6b20;
+            color: #b08d6b;
+            padding: 2px 14px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .blog-card h4 { margin-bottom: 8px; }
+        .blog-card a { color: #1a1a2e; text-decoration: none; }
+        .blog-card a:hover { color: #b08d6b; }
+        
+        /* ===== SUPERVISION ===== */
+        .supervision-block {
+            background: #1a1a2e;
+            color: #fff;
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+        }
+        .supervision-block h3 { color: #b08d6b; }
+        .supervision-block p { color: #ccc; max-width: 600px; margin: 0 auto 20px; }
+        .supervision-block .btn { background: #b08d6b; color: #fff; }
+        .supervision-block .btn:hover { background: #9a7a5a; }
+        
+        /* ===== PRICING ===== */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .pricing-card {
+            background: #fff;
+            padding: 40px 25px 35px;
+            border-radius: 20px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.06);
+            text-align: center;
+            border: 1px solid #eee;
+            transition: 0.3s;
+            position: relative;
+        }
+        .pricing-card:hover { transform: translateY(-8px); box-shadow: 0 15px 50px rgba(0,0,0,0.1); }
+        .pricing-card.popular {
+            border: 2px solid #b08d6b;
+            background: #fdfcfa;
+        }
+        .pricing-card.popular::before {
+            content: "🔥 Самый популярный";
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #b08d6b;
+            color: #fff;
+            padding: 4px 24px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .pricing-card .price {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin: 15px 0;
+        }
+        .pricing-card ul { list-style: none; text-align: left; margin: 20px 0; padding: 0; }
+        .pricing-card ul li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; }
+        .pricing-card ul li::before { content: "✓ "; color: #b08d6b; font-weight: 700; }
+        
+        /* ===== REVIEWS ===== */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .review-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        .review-card .avatar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+        .review-card .avatar span { font-size: 2.2rem; }
+        .review-card .avatar div { font-weight: 600; }
+        .review-card .avatar div small { font-weight: 400; color: #999; font-size: 0.8rem; display: block; }
+        .review-card p { font-style: italic; color: #444; }
+        .review-card .date { font-size: 0.8rem; color: #aaa; margin-top: 8px; }
+        
+        /* ===== FAQ ===== */
+        .faq-grid { max-width: 800px; margin: 0 auto; }
+        .faq-item {
+            background: #fff;
+            padding: 20px 25px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.04);
+            border-left: 4px solid #b08d6b;
+            cursor: pointer;
+        }
+        .faq-item h4 {
+            font-size: 1.1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0;
+        }
+        .faq-item .icon-faq { font-size: 1.3rem; transition: transform 0.3s; }
+        .faq-item.active .icon-faq { transform: rotate(45deg); }
+        .faq-item p { margin-top: 12px; color: #555; display: none; }
+        .faq-item.active p { display: block; }
+        
+        /* ===== CTA FORM ===== */
+        .cta-block {
+            background: linear-gradient(135deg, #1a1a2e, #2d2d44);
+            color: #fff;
+            text-align: center;
+            padding: 70px 0;
+        }
+        .cta-block h2 { color: #fff; }
+        .cta-block p { font-size: 1.2rem; color: #ccc; max-width: 600px; margin: 0 auto 30px; }
+        .form-wrapper {
+            max-width: 500px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.08);
+            padding: 30px 35px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        .form-wrapper input, .form-wrapper select {
+            width: 100%;
+            padding: 14px 18px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            background: rgba(255,255,255,0.9);
+        }
+        .form-wrapper input:focus, .form-wrapper select:focus { outline: 2px solid #b08d6b; }
+        .form-wrapper .btn { width: 100%; }
+        .form-message { margin-top: 15px; color: #b08d6b; font-weight: 600; display: none; }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background: #1a1a2e;
+            color: #aaa;
+            padding: 40px 0 20px;
+        }
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        footer .socials a {
+            color: #ddd;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        footer .socials a:hover { color: #b08d6b; }
+        footer .legal a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin-right: 20px;
+        }
+        footer .legal a:hover { color: #b08d6b; }
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #b08d6b;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(176,141,107,0.4);
+            transition: 0.3s;
+            display: none;
+            z-index: 999;
+        }
+        .back-to-top:hover { background: #9a7a5a; transform: scale(1.1); }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.4rem; }
+            h2 { font-size: 2rem; }
+            .hero h1 { font-size: 2.4rem; }
+            .why-grid { grid-template-columns: 1fr; text-align: center; }
+            .why-grid .stats { justify-content: center; }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .segments-grid { grid-template-columns: 1fr; }
+            .header-contact { display: none; }
+            .nav-links { gap: 12px; justify-content: center; margin-top: 8px; }
+            header .container { flex-direction: column; }
+            .form-wrapper { padding: 20px; }
+            .supervision-block { padding: 30px 20px; }
+            .philosophy-block { padding: 20px; }
+        }
+        @media (max-width: 480px) {
+            .container { padding: 0 12px; }
+            .btn { padding: 14px 25px; font-size: 1rem; }
+            .pricing-card .price { font-size: 2.2rem; }
+            .back-to-top { width: 44px; height: 44px; font-size: 1.2rem; bottom: 20px; right: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ==================== HEADER ==================== -->
+<header>
+    <div class="container">
+        <a href="/" class="logo">Илья <span>Годовник</span></a>
+        <ul class="nav-links">
+            <li><a href="#metod">О методе</a></li>
+            <li><a href="#uslugi">Услуги</a></li>
+            <li><a href="#blog">Блог</a></li>
+            <li><a href="/testy/" style="color:#b08d6b;">Тесты</a></li>
+            <li><a href="#supervision">Супервизия</a></li>
+            <li><a href="#otzyvy">Отзывы</a></li>
+            <li><a href="#zapis" class="nav-cta">Записаться</a></li>
+        </ul>
+        <div class="header-contact">
+            <a href="tel:+7XXX">+7 (XXX) XXX-XX-XX</a> | <a href="#">Telegram</a>
+        </div>
+    </div>
+</header>
+
+<!-- ==================== HERO ==================== -->
+<main>
+<section class="hero" id="glavnaya">
+    <div class="container">
+        <h1>Здравствуйте, я <span class="highlight">Илья Годовник</span></h1>
+        <p>Я помогаю людям понять устройство своей психики через <strong>психоаналитическую диагностику</strong>. Это не просто тест — это карта вашего внутреннего мира, которая показывает, где вы застряли, а где — ваш ресурс.</p>
+        <a href="#zapis" class="btn">Записаться на сканирование</a>
+        <div class="hero-badges">
+            <span>🧠 Психоаналитик</span>
+            <span>📋 Карта личности</span>
+            <span>🕒 Онлайн / Москва</span>
+            <span>🔒 Конфиденциально</span>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== PHILOSOPHY ==================== -->
+<section class="section-light" aria-labelledby="philosophy-title">
+    <div class="container">
+        <h2 id="philosophy-title">Моя <span>философия</span></h2>
+        <div class="philosophy-block">
+            <p>«Любые эмоциональные трудности — это не поломка, а сигнал о том, что мы избегаем истинной встречи с самими собой. Моя задача — не дать вам готовый ответ, а помочь вам услышать свой собственный голос, который часто заглушен страхами и чужими ожиданиями. Диагностика — это первый шаг к этой встрече.»</p>
+            <div class="author">— Илья Годовник, психоаналитик</div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== FOR WHOM ==================== -->
+<section class="section-warm" id="komu">
+    <div class="container">
+        <h2>Кому нужна <span>диагностика?</span></h2>
+        <p class="section-subtitle">Если вы узнали себя в одном из портретов — значит, пришло время заглянуть вглубь.</p>
+        <div class="segments-grid">
+            <div class="segment-card">
+                <h4>💼 «Успешный, но уставший»</h4>
+                <p class="problem">Кризис идентичности: «Я достиг всего, но мне плохо».</p>
+                <p class="solution">Решение: ясность целей, понимание «тени» и саботажников успеха.</p>
+            </div>
+            <div class="segment-card">
+                <h4>🔄 «В профессиональном тупике»</h4>
+                <p class="problem">Синдром самозванца, страх роста, сложные клиенты.</p>
+                <p class="solution">Решение: внедрение диагностики в практику, повышение чека и статуса.</p>
+            </div>
+            <div class="segment-card">
+                <h4>🎭 «Вечный студент»</h4>
+                <p class="problem">Страх обязательств, постоянная смена профессии.</p>
+                <p class="solution">Решение: прояснение истинных желаний («Я» и «Надо»).</p>
+            </div>
+            <div class="segment-card">
+                <h4>💰 «Я и мои деньги»</h4>
+                <p class="problem">Страх делегировать, нанимать, повышать цены.</p>
+                <p class="solution">Решение: управление командой через понимание психотипов.</p>
+            </div>
+        </div>
+        <div class="btn-center"><a href="#zapis" class="btn">Узнать свой психотип</a></div>
+    </div>
+</section>
+
+<!-- ==================== METHOD ==================== -->
+<section class="section-light" id="metod">
+    <div class="container">
+        <h2>Как работает <span>диагностика?</span></h2>
+        <p class="section-subtitle">Это не консультация. Это исследование вашей психической структуры.</p>
+        <div class="method-grid">
+            <div class="method-card">
+                <div class="step">1</div>
+                <h4>Тестирование (скрининг)</h4>
+                <p>Адаптированный опросник на основе MMPI. Определяем <strong>уровень организации</strong> (психотический → пограничный → невротический → зрелый).</p>
+                <p class="result">→ Первичные гипотезы</p>
+            </div>
+            <div class="method-card">
+                <div class="step">2</div>
+                <h4>Глубинное интервью</h4>
+                <p>7 блоков: идентичность, самооценка, объектные отношения, защиты, тестирование реальности, травма, перенос.</p>
+                <p class="result">→ Ведущий психотип и сценарии</p>
+            </div>
+            <div class="method-card">
+                <div class="step">3</div>
+                <h4>Карта личности</h4>
+                <p>Письменное заключение: ваш психотип, сильные стороны, ловушки, зоны роста и рекомендации по формату работы.</p>
+                <p class="result">→ Готовая карта + план действий</p>
+            </div>
+        </div>
+        <div class="btn-center"><a href="#zapis" class="btn btn-outline">Пройти диагностику</a></div>
+    </div>
+</section>
+
+<!-- ==================== WHY ME (личная история) ==================== -->
+<section class="section-warm" id="o-mne">
+    <div class="container">
+        <h2>Почему я <span>стал психоаналитиком</span></h2>
+        <div class="why-grid">
+            <div>
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='500' viewBox='0 0 400 500'%3E%3Crect width='400' height='500' fill='%231a1a2e'/%3E%3Ctext x='50' y='250' font-family='Arial' font-size='30' fill='%23b08d6b'%3EИлья Годовник%3C/text%3E%3C/svg%3E" 
+                     alt="Илья Григорьевич Годовник, психоаналитик" loading="lazy">
+            </div>
+            <div>
+                <h3 style="text-align:left;">Илья Григорьевич Годовник</h3>
+                <p style="font-size:1.05rem; color:#444;">Психоаналитик, специалист по психоаналитической диагностике.</p>
+                <p>Я пришел в психоанализ через собственный кризис. Мне потребовалось больше 8 лет личной терапии и сотни часов супервизий, чтобы понять: <strong>настоящие изменения возможны только тогда, когда ты видишь структуру своей психики</strong>, а не просто борешься с симптомами.</p>
+                <p>Сегодня я помогаю другим пройти этот путь быстрее и безопаснее — через точную диагностику, а не через годы проб и ошибок.</p>
+                <div class="stats">
+                    <div class="stat"><span class="number">8+</span><span>лет практики</span></div>
+                    <div class="stat"><span class="number">200+</span><span>часов личной терапии</span></div>
+                    <div class="stat"><span class="number">50+</span><span>супервизий</span></div>
+                    <div class="stat"><span class="number">150+</span><span>клиентов</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== BLOG PREVIEW ==================== -->
+<section class="section-light" id="blog">
+    <div class="container">
+        <h2>Читайте в <span>блоге</span></h2>
+        <p class="section-subtitle">Простые объяснения сложных вещей — для тех, кто хочет глубже понять себя.</p>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <span class="tag">Психотипы</span>
+                <a href="#"><h4>Как определить свой психотип? Нарцисс, шизоид, истероид...</h4></a>
+                <p>Краткое описание: как проявляются разные типы в жизни и работе.</p>
+            </div>
+            <div class="blog-card">
+                <span class="tag">Уровни организации</span>
+                <a href="#"><h4>Что такое пограничный уровень и чем он отличается от невротического?</h4></a>
+                <p>Разбираемся, почему понимание этого спасает от неправильной терапии.</p>
+            </div>
+            <div class="blog-card">
+                <span class="tag">Защиты</span>
+                <a href="#"><h4>Обесценивание, отрицание, интеллектуализация — как они работают?</h4></a>
+                <p>Как распознать свои защиты и перестать саботировать жизнь.</p>
+            </div>
+        </div>
+        <div class="btn-center"><a href="#" class="btn btn-outline">Все статьи блога</a></div>
+    </div>
+</section>
+
+<!-- ==================== SUPERVISION ==================== -->
+<section class="section-dark" id="supervision">
+    <div class="container">
+        <div class="supervision-block">
+            <h3>🧑‍🏫 Супервизия для психологов и коучей</h3>
+            <p>Я предлагаю супервизию для коллег, которые хотят внедрить психоаналитическую диагностику в свою практику, разобрать сложные случаи и повысить свою профессиональную устойчивость.</p>
+            <a href="#zapis" class="btn">Записаться на супервизию</a>
+            <p style="margin-top:15px; font-size:0.9rem; color:#999;">Индивидуально и в группах</p>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== PRICING ==================== -->
+<section class="section-light" id="uslugi">
+    <div class="container">
+        <h2>Инвестиция в <span>ясность</span></h2>
+        <p class="section-subtitle">Выберите свой пакет — каждый шаг приближает вас к пониманию себя.</p>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Экспресс-скан</h3>
+                <div class="price">7 000 ₽</div>
+                <ul>
+                    <li>1 встреча</li>
+                    <li>Тест + устная обратная связь</li>
+                    <li>Без письменного отчета</li>
+                </ul>
+                <a href="#zapis" class="btn btn-outline">Записаться</a>
+            </div>
+            <div class="pricing-card popular">
+                <h3>Карта личности</h3>
+                <div class="price">20 000 ₽</div>
+                <ul>
+                    <li>3 встречи (тест + интервью + отчет)</li>
+                    <li>Письменное заключение</li>
+                    <li>Психотип, защиты, зоны роста</li>
+                    <li>⭐ Рекомендации по формату работы</li>
+                </ul>
+                <a href="#zapis" class="btn">Заказать Карту</a>
+            </div>
+            <div class="pricing-card">
+                <h3>Карта + Трек</h3>
+                <div class="price">35 000 ₽</div>
+                <ul>
+                    <li>Диагностика + 3 месяца сопровождения</li>
+                    <li>6 встреч для внедрения</li>
+                    <li>Глубокая интеграция изменений</li>
+                </ul>
+                <a href="#zapis" class="btn btn-outline">Выбрать трек</a>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:25px; color:#666; font-size:0.95rem;">
+            <em>«Низкая цена в психоанализе часто приводит к тому, что клиент не ценит результат. Моя цена отражает глубину и безопасность работы».</em>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== REVIEWS ==================== -->
+<section class="section-warm" id="otzyvy">
+    <div class="container">
+        <h2>Отзывы <span>клиентов</span></h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="avatar">
+                    <span>👨‍💼</span>
+                    <div>Алексей <small>38 лет, предприниматель</small></div>
+                </div>
+                <p>«Я наконец-то понял, почему я каждый раз ухожу с работы. Оказалось, это был не кризис, а мой маниакальный тип, который боялся рутины. Получил четкий план, что делать. Спасибо!»</p>
+                <div class="date">15 мая 2026</div>
+            </div>
+            <div class="review-card">
+                <div class="avatar">
+                    <span>👩‍💼</span>
+                    <div>Екатерина <small>42 года, HR-директор</small></div>
+                </div>
+                <p>«Диагностика — это было страшно и интересно. Очень понравился подход: сначала разобраться, а потом уже лечить. Получила свою "Карту" и увидела свои слабые места. Теперь знаю, над чем работать».</p>
+                <div class="date">2 июня 2026</div>
+            </div>
+            <div class="review-card">
+                <div class="avatar">
+                    <span>🧑‍🏫</span>
+                    <div>Марина <small>45 лет, коуч</small></div>
+                </div>
+                <p>«Как специалист помогающей профессии, я давно искала способ поднять свой чек. Диагностика дала мне надстройку, которой не хватало. Теперь я работаю глубже и зарабатываю больше».</p>
+                <div class="date">20 августа 2026</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== FAQ ==================== -->
+<section class="section-light" id="faq">
+    <div class="container">
+        <h2>Часто задаваемые <span>вопросы</span></h2>
+        <div class="faq-grid">
+            <div class="faq-item active">
+                <h4><span>❓ Это клинический диагноз? Боюсь, что меня «заклеймят».</span><span class="icon-faq">+</span></h4>
+                <p>Нет, это не клинический диагноз. Это определение вашего психотипа и уровня организации личности (аналогично тому, как мы говорим «холерик» или «меланхолик»). Это информация о вашем потенциале и зонах роста, а не ярлык.</p>
+            </div>
+            <div class="faq-item">
+                <h4><span>❓ Зачем мне диагностика, если я просто хочу разобраться в отношениях?</span><span class="icon-faq">+</span></h4>
+                <p>Отношения — это всегда проекция. Ваша «Карта личности» покажет, какие бессознательные сценарии вы проигрываете с партнерами. Это позволит вам выйти из повторяющегося круга, а не просто получить совет «уйти или остаться».</p>
+            </div>
+            <div class="faq-item">
+                <h4><span>❓ Дорого. Сколько я получу за эти деньги?</span><span class="icon-faq">+</span></h4>
+                <p>Сколько вы уже потратили на курсы, которые не сработали, или на психологов, которые вас не поняли? Эта сумма — инвестиция в точность. Без карты вы ходите по кругу годами. С картой вы получаете карту вашей жизни.</p>
+            </div>
+            <div class="faq-item">
+                <h4><span>❓ А что, если мне не подойдет результат?</span><span class="icon-faq">+</span></h4>
+                <p>Результат диагностики — это объективный срез. Он основан на ваших ответах и интервью. Моя задача — не угодить вам, а дать честную и точную картину. Это единственный путь к реальным изменениям.</p>
+            </div>
+            <div class="faq-item">
+                <h4><span>❓ Как проходит онлайн-диагностика?</span><span class="icon-faq">+</span></h4>
+                <p>Все встречи проводятся в Zoom или Skype. Тест и анкету вы заполняете в удобное время. Интервью проходит в живом диалоге. Заключение вы получаете в электронном виде.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== CTA + FORM ==================== -->
+<section class="cta-block" id="zapis">
+    <div class="container">
+        <h2>Готовы узнать свою <span style="color:#b08d6b;">Карту личности?</span></h2>
+        <p>Оставьте заявку, и я свяжусь с вами для уточнения деталей. Первый шаг к осознанности — это просто.</p>
+        <div class="form-wrapper">
+            <form id="orderForm" novalidate>
+                <input type="text" id="name" placeholder="Ваше имя" required>
+                <input type="tel" id="phone" placeholder="+7 (___) ___-__-__" required>
+                <input type="email" id="email" placeholder="E-mail (для отчета)">
+                <select id="package">
+                    <option value="express">Экспресс-скан (7 000 ₽)</option>
+                    <option value="card" selected>Карта личности (20 000 ₽)</option>
+                    <option value="track">Карта + Трек (35 000 ₽)</option>
+                </select>
+                <button type="submit" class="btn">Отправить заявку</button>
+                <div id="formMessage" class="form-message">✅ Спасибо! Я свяжусь с вами в ближайшее время.</div>
+            </form>
+        </div>
+        <p style="margin-top:15px; font-size:0.9rem; color:#999;">* Конфиденциальность гарантирована. Данные не передаются третьим лицам.</p>
+    </div>
+</section>
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+    <div class="container">
+        <div>
+            <div class="logo" style="font-size:1.2rem; margin-bottom:8px;">Илья <span>Годовник</span></div>
+            <p class="copy">© 2026 Илья Григорьевич Годовник. Все права защищены.</p>
+        </div>
+        <div>
+            <div class="socials">
+                <a href="#">Telegram</a>
+                <a href="#">Instagram</a>
+                <a href="#">VK</a>
+                <a href="#">WhatsApp</a>
+            </div>
+            <div class="legal" style="margin-top:12px;">
+                <a href="#">Договор оферты</a>
+                <a href="#">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </div>
+    <div style="text-align:center; margin-top:25px; font-size:0.8rem; color:#666; border-top:1px solid #333; padding-top:15px; max-width:1200px; margin-left:auto; margin-right:auto;">
+        <p>Информация на сайте носит информационный характер и не является публичной офертой. Для получения точной информации свяжитесь со мной.</p>
+    </div>
+</footer>
+
+<!-- ==================== BACK TO TOP ==================== -->
+<button class="back-to-top" id="backToTop" aria-label="Наверх">↑</button>
+
+<!-- ==================== SCRIPTS ==================== -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // FAQ Toggle
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const header = item.querySelector('h4');
+            header.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const wasActive = item.classList.contains('active');
+                faqItems.forEach(i => i.classList.remove('active'));
+                if (!wasActive) item.classList.add('active');
+            });
+        });
+
+        // Form
+        const form = document.getElementById('orderForm');
+        const message = document.getElementById('formMessage');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            if (!name || !phone) {
+                alert('Пожалуйста, заполните имя и телефон.');
+                return;
+            }
+            message.style.display = 'block';
+            form.reset();
+            setTimeout(() => { message.style.display = 'none'; }, 5000);
+        });
+
+        // Back to Top
+        const backBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', function() {
+            backBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+        backBtn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+</script>
+
+</body>
+</html>
