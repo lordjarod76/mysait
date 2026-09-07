@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Психологические тесты | Илья Годовник</title>
+    <meta name="description" content="Пройдите психологические тесты на определение психотипа и уровня организации личности от психоаналитика Ильи Годовника.">
+    <link rel="canonical" href="https://godovnik-psy.ru/testy/">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Психологические тесты | Илья Годовник">
+    <meta property="og:description" content="Пройдите тесты на психотип и уровень организации личности.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://godovnik-psy.ru/testy/">
+    
+    <style>
+        /* ===== RESET & BASE (как на главной) ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: #f9f7f4;
+            color: #2c2c2c;
+            line-height: 1.7;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* ===== HEADER ===== */
+        header {
+            background: #1a1a2e;
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo { color: #fff; font-size: 1.5rem; font-weight: 700; text-decoration: none; }
+        .logo span { color: #b08d6b; }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .nav-links a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: #b08d6b; }
+        .nav-cta {
+            background: #b08d6b;
+            color: #fff !important;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+        .nav-cta:hover { background: #9a7a5a !important; }
+        .header-contact {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-left: 15px;
+        }
+        .header-contact a { color: #b08d6b; text-decoration: none; }
+        
+        /* ===== HERO ===== */
+        .test-hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+            color: #fff;
+            padding: 60px 0 50px;
+            text-align: center;
+        }
+        .test-hero h1 { font-size: 2.8rem; color: #fff; margin-bottom: 10px; }
+        .test-hero h1 span { color: #b08d6b; }
+        .test-hero p { font-size: 1.2rem; color: #ccc; max-width: 600px; margin: 0 auto; }
+        
+        /* ===== TESTS GRID ===== */
+        .tests-section { padding: 60px 0; }
+        .tests-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        .test-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 25px 25px 30px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.06);
+            border: 1px solid #eee;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .test-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+        }
+        .test-card h3 {
+            font-size: 1.4rem;
+            color: #1a1a2e;
+            margin-bottom: 8px;
+        }
+        .test-card .badge {
+            display: inline-block;
+            background: #b08d6b20;
+            color: #b08d6b;
+            padding: 2px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .test-card p {
+            color: #555;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+        .test-card .iframe-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 80%; /* пропорции 5:4, можно подогнать под высоту теста */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: inset 0 0 0 1px #eee;
+            background: #fafaf8;
+        }
+        .test-card .iframe-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        /* Если тест очень высокий, можно увеличить padding-bottom */
+        .test-card:first-child .iframe-wrapper { padding-bottom: 70%; }
+        .test-card:last-child .iframe-wrapper { padding-bottom: 90%; } /* если второй тест выше */
+        
+        /* ===== NOTE ===== */
+        .note {
+            text-align: center;
+            color: #888;
+            font-size: 0.95rem;
+            margin-top: 40px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.04);
+        }
+        .note a { color: #b08d6b; text-decoration: none; }
+        .note a:hover { text-decoration: underline; }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background: #1a1a2e;
+            color: #aaa;
+            padding: 40px 0 20px;
+        }
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        footer .socials a {
+            color: #ddd;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        footer .socials a:hover { color: #b08d6b; }
+        footer .legal a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin-right: 20px;
+        }
+        footer .legal a:hover { color: #b08d6b; }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .tests-grid { grid-template-columns: 1fr; }
+            .test-card .iframe-wrapper { padding-bottom: 70% !important; }
+        }
+        @media (max-width: 768px) {
+            .test-hero h1 { font-size: 2rem; }
+            .header-contact { display: none; }
+            .nav-links { gap: 12px; justify-content: center; margin-top: 8px; }
+            header .container { flex-direction: column; }
+        }
+        @media (max-width: 480px) {
+            .test-card { padding: 20px; }
+            .test-card .iframe-wrapper { padding-bottom: 80% !important; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ==================== HEADER ==================== -->
+<header>
+    <div class="container">
+        <a href="/" class="logo">Илья <span>Годовник</span></a>
+        <ul class="nav-links">
+            <li><a href="/#metod">О методе</a></li>
+            <li><a href="/#uslugi">Услуги</a></li>
+            <li><a href="/blog/">Блог</a></li>
+            <li><a href="/testy/" style="color:#b08d6b;">Тесты</a></li>
+            <li><a href="/#supervision">Супервизия</a></li>
+            <li><a href="/#otzyvy">Отзывы</a></li>
+            <li><a href="/#zapis" class="nav-cta">Записаться</a></li>
+        </ul>
+        <div class="header-contact">
+            <a href="tel:+7XXX">+7 (XXX) XXX-XX-XX</a> | <a href="#">Telegram</a>
+        </div>
+    </div>
+</header>
+
+<!-- ==================== HERO ==================== -->
+<section class="test-hero">
+    <div class="container">
+        <h1>Психологические <span>тесты</span></h1>
+        <p>Узнайте больше о своей личности и уровне организации — это займёт всего несколько минут</p>
+    </div>
+</section>
+
+<!-- ==================== TESTS ==================== -->
+<section class="tests-section">
+    <div class="container">
+        <div class="tests-grid">
+            <!-- ТЕСТ 1 -->
+            <div class="test-card">
+                <span class="badge">🧠 Личностный</span>
+                <h3>Тест личности</h3>
+                <p>Поможет определить ваш ведущий психотип, склонности и зоны роста. Основан на психоаналитическом подходе.</p>
+                <div class="iframe-wrapper">
+                    <iframe src="https://lordjarod76.github.io/ilyasait/" 
+                            loading="lazy"
+                            allow="fullscreen"
+                            title="Тест личности">
+                    </iframe>
+                </div>
+            </div>
+            
+            <!-- ТЕСТ 2 -->
+            <div class="test-card">
+                <span class="badge">📊 Диагностический</span>
+                <h3>Психологический тест</h3>
+                <p>Оценка уровня организации личности (психотический, пограничный, невротический, зрелый) — первый шаг к пониманию себя.</p>
+                <div class="iframe-wrapper">
+                    <iframe src="https://lordjarod76.github.io/psycho-test/" 
+                            loading="lazy"
+                            allow="fullscreen"
+                            title="Психологический тест">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+        
+        <div class="note">
+            💡 Результаты тестов носят ознакомительный характер. Для точной диагностики рекомендую записаться на <a href="/#zapis">консультацию</a>.
+        </div>
+    </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+    <div class="container">
+        <div>
+            <div class="logo" style="font-size:1.2rem; margin-bottom:8px;">Илья <span>Годовник</span></div>
+            <p class="copy">© 2026 Илья Григорьевич Годовник. Все права защищены.</p>
+        </div>
+        <div>
+            <div class="socials">
+                <a href="#">Telegram</a>
+                <a href="#">Instagram</a>
+                <a href="#">VK</a>
+                <a href="#">WhatsApp</a>
+            </div>
+            <div class="legal" style="margin-top:12px;">
+                <a href="#">Договор оферты</a>
+                <a href="#">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </div>
+    <div style="text-align:center; margin-top:25px; font-size:0.8rem; color:#666; border-top:1px solid #333; padding-top:15px; max-width:1200px; margin-left:auto; margin-right:auto;">
+        <p>Информация на сайте носит информационный характер и не является публичной офертой.</p>
+    </div>
+</footer>
+
+</body>
+</html>
