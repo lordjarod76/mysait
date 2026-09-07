@@ -144,6 +144,55 @@
         }
         .header-contact a { color: #b08d6b; text-decoration: none; }
         
+        /* ===== DROPDOWN ===== */
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-toggle {
+            cursor: pointer;
+            user-select: none;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #1a1a2e;
+            padding: 10px 0;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+            min-width: 210px;
+            list-style: none;
+            z-index: 1000;
+            margin-top: 5px;
+        }
+        .dropdown-menu li {
+            padding: 0;
+        }
+        .dropdown-menu li a {
+            display: block;
+            padding: 10px 20px;
+            color: #ddd;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: background 0.3s, color 0.3s;
+            white-space: nowrap;
+        }
+        .dropdown-menu li a:hover {
+            background: rgba(176, 141, 107, 0.2);
+            color: #b08d6b;
+        }
+        /* Показываем меню при наведении на .dropdown (десктоп) */
+        @media (min-width: 769px) {
+            .dropdown:hover .dropdown-menu {
+                display: block;
+            }
+        }
+        /* Для мобильных – показываем по клику (через JS) */
+        .dropdown.open .dropdown-menu {
+            display: block;
+        }
+        
         /* ===== HERO ===== */
         .hero {
             background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
@@ -263,6 +312,7 @@
             max-width: 400px;
             border-radius: 20px;
             box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+            background: #e8e6e0; /* fallback цвет на случай, если фото не загрузится */
         }
         .why-grid .stats {
             display: flex;
@@ -502,6 +552,18 @@
             .form-wrapper { padding: 20px; }
             .supervision-block { padding: 30px 20px; }
             .philosophy-block { padding: 20px; }
+            /* dropdown на мобильных */
+            .dropdown-menu {
+                position: static;
+                background: #2d2d44;
+                box-shadow: none;
+                margin-top: 0;
+                border-radius: 8px;
+            }
+            .dropdown-menu li a {
+                padding: 8px 20px;
+                font-size: 0.9rem;
+            }
         }
         @media (max-width: 480px) {
             .container { padding: 0 12px; }
@@ -521,13 +583,19 @@
             <li><a href="#metod">О методе</a></li>
             <li><a href="#uslugi">Услуги</a></li>
             <li><a href="#blog">Блог</a></li>
-            <li><a href="https://lordjarod76.github.io/ilyasait/" target="_blank" style="color:#b08d6b;">Тесты</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" style="color:#b08d6b;">Тесты ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="https://lordjarod76.github.io/ilyasait/" target="_blank">🧠 Тест личности</a></li>
+                    <li><a href="https://lordjarod76.github.io/psycho-test/" target="_blank">📊 Психологический тест</a></li>
+                </ul>
+            </li>
             <li><a href="#supervision">Супервизия</a></li>
             <li><a href="#otzyvy">Отзывы</a></li>
             <li><a href="#zapis" class="nav-cta">Записаться</a></li>
         </ul>
         <div class="header-contact">
-            <a href="tel:+79272007307">+7 (927) 200-73-07</a> | <a href="#">Telegram</a>
+            <a href="tel:+7XXX">+7 (XXX) XXX-XX-XX</a> | <a href="#">Telegram</a>
         </div>
     </div>
 </header>
@@ -542,7 +610,7 @@
         <div class="hero-badges">
             <span>🧠 Психоаналитик</span>
             <span>📋 Карта личности</span>
-            <span>🕒 Онлайн / Самара</span>
+            <span>🕒 Онлайн / Москва</span>
             <span>🔒 Конфиденциально</span>
         </div>
     </div>
@@ -625,8 +693,10 @@
         <h2>Почему я <span>стал психоаналитиком</span></h2>
         <div class="why-grid">
             <div>
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='500' viewBox='0 0 400 500'%3E%3Crect width='400' height='500' fill='%231a1a2e'/%3E%3Ctext x='50' y='250' font-family='Arial' font-size='30' fill='%23b08d6b'%3EИлья Годовник%3C/text%3E%3C/svg%3E" 
-                     alt="Илья Григорьевич Годовник, психоаналитик" loading="lazy">
+                <img src="https://raw.githubusercontent.com/lordjarod76/mysait/main/001.png" 
+                     alt="Илья Григорьевич Годовник, психоаналитик" 
+                     loading="lazy"
+                     onerror="this.style.display='none'">
             </div>
             <div>
                 <h3 style="text-align:left;">Илья Григорьевич Годовник</h3>
@@ -690,7 +760,7 @@
         <div class="pricing-grid">
             <div class="pricing-card">
                 <h3>Экспресс-скан</h3>
-                <div class="price">5 000 ₽</div>
+                <div class="price">7 000 ₽</div>
                 <ul>
                     <li>1 встреча</li>
                     <li>Тест + устная обратная связь</li>
@@ -700,7 +770,7 @@
             </div>
             <div class="pricing-card popular">
                 <h3>Карта личности</h3>
-                <div class="price">14 000 ₽</div>
+                <div class="price">20 000 ₽</div>
                 <ul>
                     <li>3 встречи (тест + интервью + отчет)</li>
                     <li>Письменное заключение</li>
@@ -879,6 +949,24 @@
         backBtn.addEventListener('click', function() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+
+        // ===== DROPDOWN TOGGLE (для клика) =====
+        const dropdownToggle = document.querySelector('.dropdown-toggle');
+        const dropdown = document.querySelector('.dropdown');
+
+        if (dropdownToggle && dropdown) {
+            dropdownToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                dropdown.classList.toggle('open');
+            });
+
+            // Закрываем меню при клике вне dropdown
+            document.addEventListener('click', function(e) {
+                if (!dropdown.contains(e.target)) {
+                    dropdown.classList.remove('open');
+                }
+            });
+        }
     });
 </script>
 
